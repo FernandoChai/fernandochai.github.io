@@ -1,0 +1,41 @@
+.p-top {
+  padding-top: 5%;
+}
+
+.center-vertically {
+  align-self: center;
+}
+
+@media only screen and (max-width: 992px) {
+  .center {
+    text-align: center;
+  }
+}
+
+.full-screen {
+  height: 100vh;
+}
+
+.rounded-btn {
+  border-radius: 10px;
+}
+
+.border-btn {
+  border: 1px solid white;
+}
+
+.border-btn:hover {
+  border: 1px solid rgb(62, 125, 241);
+}
+
+.btn-pj {
+  background-color: cornflowerblue;
+}
+
+.img-bg {
+  background-image: url(img/background.jpg);
+}
+
+textarea {
+  resize: none;
+}
