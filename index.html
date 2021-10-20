@@ -22,9 +22,9 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link abt" href="#about">About</a>
                     <a class="nav-link" href="#projects">Projects</a>
-                    <a class="nav-link " href="#contact">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                 </div>
             </div>
         </div>
@@ -34,9 +34,9 @@
         <div class="container-fluid py-5 text-light">
             <img src="img/profile.jpg" alt="photo-profile" width="200px" class="rounded-circle img-fluid ">
             <h1 class="display-5 fw-bold">Fernando Chai</h1>
-            <h6 class="mb-5">STUDENT | WEB DEVELOPER</h6>
-            <a href="#about" class="text-decoration-none border-btn my-5 text-white p-3 rounded-btn">MORE ABOUT ME <i
-                    class="bi bi-chevron-down"></i></a>
+            <h6 class="mb-5">STUDENT | SOFTWARE ENGINEER</h6>
+            <a href="#about" class="text-decoration-none border-btn my-5 text-white p-3 rounded-btn more-about">MORE
+                ABOUT ME <i class="bi bi-chevron-down"></i></a>
         </div>
     </div>
 
@@ -167,16 +167,24 @@
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" id="name" aria-describedby="name" name="name">
-
+                        <div class="invalid-feedback">
+                            Please input your name.
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" aria-describedby="email" name="email">
+                        <div class="invalid-feedback">
+                            Please input your email.
+                        </div>
 
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Message</label>
                         <textarea class="form-control" id="message" rows="5" name="message"></textarea>
+                        <div class="invalid-feedback">
+                            Please input your message.
+                        </div>
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-send col-12">Submit</button>
@@ -224,27 +232,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>
 
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwhMMjgzmfY2-hHJJKxrExPh6i85sT6vKEn7bg-Ywn1W53wclcXlVkQHqNrd2vkPFOB7w/exec'
-        const form = document.forms['contact-form']
-        const btnSend = document.querySelector('.btn-send');
-        const btnLoad = document.querySelector('.btn-load');
-        const alert = document.querySelector('.alert');
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            btnSend.classList.toggle('d-none');
-            btnLoad.classList.toggle('d-none');
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    btnSend.classList.toggle('d-none');
-                    btnLoad.classList.toggle('d-none');
-                    alert.classList.toggle('d-none');
-                    form.reset();
-                    console.log('Success!', response)
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
+    <script src="script.js">
     </script>
 </body>
 
