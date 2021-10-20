@@ -43,3 +43,7 @@ textarea {
 .icon-contact {
   font-size: 5vh;
 }
+
+.icon-contact:hover {
+  font-size: 6vh;
+}
