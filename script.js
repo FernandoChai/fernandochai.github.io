@@ -5,7 +5,9 @@ const btnLoad = document.querySelector(".btn-load");
 const alerts = document.querySelector(".alert");
 const navbar = document.querySelectorAll(".nav-link");
 const more = document.querySelector(".more-about");
+const navleft = document.querySelector(".navbar-brand");
 
+//active navbar more about me
 more.addEventListener("click", function () {
   var about = document.querySelector(".abt");
   var curr = document.getElementsByClassName("nav-link active");
@@ -13,6 +15,15 @@ more.addEventListener("click", function () {
   about.className += " active";
 });
 
+//active navbar left (home)
+navleft.addEventListener("click", function () {
+  var home = document.querySelector(".home-nav");
+  var curr = document.getElementsByClassName("nav-link active");
+  curr[0].classList.remove("active");
+  home.className += " active";
+});
+
+//active navbar
 for (i = 0; i < navbar.length; i++) {
   navbar[i].addEventListener("click", function () {
     var curr = document.getElementsByClassName("nav-link active");
@@ -31,9 +42,6 @@ var count = 0;
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  btnSend.classList.toggle("d-none");
-  btnLoad.classList.toggle("d-none");
-
   if (names.value.length == 0) {
     names.classList.add("is-invalid");
     count++;
@@ -59,10 +67,10 @@ form.addEventListener("submit", (e) => {
   }
 
   if (count > 0) {
-    btnSend.classList.toggle("d-none");
-    btnLoad.classList.toggle("d-none");
     return false;
   } else {
+    btnSend.classList.toggle("d-none");
+    btnLoad.classList.toggle("d-none");
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
       .then((response) => {
         btnSend.classList.toggle("d-none");

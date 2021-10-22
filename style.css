@@ -1,3 +1,7 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 .p-top {
   padding-top: 8vh;
 }
@@ -46,4 +50,24 @@ textarea {
 
 .icon-contact:hover {
   font-size: 6vh;
+}
+
+.project-background {
+  background: rgba(0, 0, 0, 0.87);
+}
+
+.text-red {
+  color: rgb(245, 67, 67);
+}
+
+.text-grey {
+  color: rgb(206, 202, 202);
+}
+
+.background-grey {
+  background: rgb(240, 240, 239);
+}
+
+.py-custom {
+  padding: 1% 0% 5% 0%;
 }
