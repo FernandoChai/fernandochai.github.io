@@ -2,6 +2,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.container {
+  overflow-x: hidden;
+}
+
 .p-top {
   padding-top: 8vh;
 }
